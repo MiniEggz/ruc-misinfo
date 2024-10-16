@@ -1,0 +1,36 @@
+num_annos: 6
+#labels2id:
+#  misinfo: 0
+#  debunk: 1
+#  other: 2
+seed: 43
+labels2id:
+  misinfo: 0
+  other: 1
+merge_labels:
+  other:
+    - debunk
+    - other
+dataset_name: "ukraine_misinfo"
+dataset_path: "data/UkraineMisinfoDataset.csv"
+calibrate_confidence: false # change with arg
+calculate_reliability: false # change with arg
+inter_weighting: 1 # change with arg
+intra_weighting: 0 # change with arg
+agreement_metric: "krippendorff"
+output_dir_name: "automatic" # change with arg
+output_dir_name_suffix: "results"
+fold: 0 # change with arg
+include_train_data: true
+train_label_method: "soft_label" # toggle with arg
+claim_col: "claim_title" # change with arg
+drop_unrepresentative: true # change with arg
+
+# training args
+model_name: "Twitter/twhin-bert-large"
+num_epochs: 20
+warmup_epochs: 5
+learning_rate: !!float 2e-5
+label_smoothing_alpha: 0
+batch_size: 16
+debug_mode: false

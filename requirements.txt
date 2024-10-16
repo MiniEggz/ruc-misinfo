@@ -1,0 +1,14 @@
+requests
+pydantic
+torch
+transformers
+pandas
+pyarrow
+openai
+wandb
+scikit-learn
+huggingface
+datasets
+krippendorff
+networkx
+matplotlib
